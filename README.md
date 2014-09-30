@@ -11,9 +11,7 @@
 
 ### About
 
-This document describes a quick and easy way to install and play with ATG CRS.  By following this guide, you'll be able to focus on learning about ATG CRS, without debugging common gotchas.  
-
-You need to run these vms on a pretty robust machine - the ATG vm requires 6 gigs of ram to run, and the DB needs 2 gigs.
+This document describes a quick and easy way to install and play with ATG CRS.  By following this guide, you'll be able to focus on learning about ATG CRS, without debugging common gotchas. You need to run these vms on a pretty robust machine - the ATG vm requires 6 gigs of ram to run, and the DB needs 2 gigs.
 
 ### Conventions
 
@@ -143,7 +141,17 @@ For your convenience, this project contains scripts that start the ATG servers w
 
 and then in a different shell
 
-`[vagrant@localhost]$ /vagrant/scripts/atg/startPublishing.sh`
+`[vagrant@localhost]$ /vagrant/scripts/atg/startProduction.sh`
+
+Key Information:
+
+- The ATGProduction server's primary HTTP port is 8080.  You access its dynamo admin at: http://192.168.70.5:8080/dyn/admin
+- The ATGPublishing server's primary HTTP port is 8180.  You access its dynamo admin at: http://192.168.70.5:8180/dyn/admin.  It's started with the JBoss option `-Djboss.socket.binding.port-offset=100` so every port is 100 more than the corresponding ATGProduction port.
+- The ATG admin username and password is: admin/Admin123.  This applies to both ATGPublishing and ATGProduction.  Use this to log into Dynamo Admin and the BCC
+- The various endeca components are installed as the following services. From within the atg vm, you can use the scripts `/vagrant/scripts/atg/start_endeca_services.sh` and `/vagrant/scripts/atg/stop_endeca_services.sh` to start|stop all the endeca services at once:
+  - endecaplatform
+  - endecaworkbench
+  - endecacas
 
 Both servers start in the foreground.  To stop them either press control-c or close the window.
 
@@ -170,4 +178,8 @@ Do this from the command line from within the atg vm:
 `$ vagrant ssh atg`
 
 `[vagrant@localhost]$ /usr/local/endeca/Apps/CRS/control/promote_content.sh`
+
+### Access the storefront
+
+The CRS application is live at: 
 
