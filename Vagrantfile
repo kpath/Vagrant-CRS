@@ -10,7 +10,6 @@ ATG_PRIVATE_IP = "192.168.70.5"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :db do |db_config|
-
     db_config.vm.box = "chef/centos-6.5"
     db_config.vbguest.auto_update = true
 
@@ -53,6 +52,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     atg_config.vm.network "private_network", ip: ATG_PRIVATE_IP
+
+    # check for required software
+    atg_config.vm.provision "shell", path: "scripts/atg/provision_check_sofware.sh", privileged: false
 
     # provisioning script converts to oracle linux 
     atg_config.vm.provision "shell", path: "scripts/atg/provision_setup.sh"

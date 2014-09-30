@@ -93,7 +93,7 @@ Key Information:
   - Oracle Commerce Content Acquisition System 11.1 for Linux
   - Oracle Commerce Experience Manager Tools and Frameworks 11.1 for Linux
   - Oracle Commerce Guided Search Platform Services 11.1 for Linux
-- Unzip everything into the software `${ATG-CRS}/software` directory at the top of the project
+- **Unzip everything except V46389-01.zip (Experience Manager Tools and Frameworks)**. This zipfile expands to a `cd` directory containing an installer.  The provisioning scripts will unzip this file for you.
 
 ### JDK 1.7
 
@@ -114,6 +114,24 @@ Key Information:
 All oracle drivers are backwards compatible with the officially supported database versions at the time of the driver's release.  You can use ojdbc7 to connect to either 12c or 11g databases.
 
 **IMPORTANT:** Move everything you downloaded to the `${ATG-CRS}/software` directory at the top level of this project.
+
+Before going any further, make sure your software directory looks like this:
+
+`
+software/
+├── OCPlatform11.1.bin
+├── OCReferenceStore11.1.bin
+├── OCcas11.1.0-Linux64.sh
+├── OCmdex6.5.1-Linux64_829811.sh
+├── OCplatformservices11.1.0-Linux64.bin
+├── V46389-01.zip
+├── jboss-eap-6.1.0.zip
+├── jdk-7u67-linux-x64.rpm
+├── ojdbc7.jar
+├── p13390677_112040_Linux-x86-64_1of7.zip
+├── p13390677_112040_Linux-x86-64_2of7.zip
+└── readme.txt
+`
 
 ## Create the "atg" vm
 
