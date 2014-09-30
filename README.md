@@ -117,7 +117,7 @@ All oracle drivers are backwards compatible with the officially supported databa
 
 Before going any further, make sure your software directory looks like this:
 
-`
+```
 software/
 ├── OCPlatform11.1.bin
 ├── OCReferenceStore11.1.bin
@@ -131,7 +131,7 @@ software/
 ├── p13390677_112040_Linux-x86-64_1of7.zip
 ├── p13390677_112040_Linux-x86-64_2of7.zip
 └── readme.txt
-`
+```
 
 ## Create the "atg" vm
 
