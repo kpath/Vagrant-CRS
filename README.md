@@ -161,6 +161,8 @@ and then in a different shell
 
 `[vagrant@localhost]$ /vagrant/scripts/atg/startProduction.sh`
 
+Both servers start in the foreground.  To stop them either press control-c or close the window.
+
 Key Information:
 
 - The ATGProduction server's primary HTTP port is 8080.  You access its dynamo admin at: http://192.168.70.5:8080/dyn/admin
@@ -170,8 +172,6 @@ Key Information:
   - endecaplatform
   - endecaworkbench
   - endecacas
-
-Both servers start in the foreground.  To stop them either press control-c or close the window.
 
 ## Run initial full deployment
 
@@ -200,4 +200,6 @@ Do this from the command line from within the atg vm:
 ### Access the storefront
 
 The CRS application is live at: 
+
+http://192.168.70.5:8080/crs
 
