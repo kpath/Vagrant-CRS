@@ -1,0 +1,27 @@
+#!/bin/sh
+# chkconfig: 2345 95 05
+# description: Endeca Platform start-stop script
+
+ENDECA_USER=vagrant
+INSTALLER_SH=/usr/local/endeca/PlatformServices/workspace/setup/installer_sh.ini
+# We want to use installer_sh.ini variables in this script,
+# so we source it here.
+source $INSTALLER_SH
+
+case "$1" in
+    'start')
+
+		if [ -f "/var/lock/subsys/endecaplatform" ]
+		then
+			echo "Endeca Platform Services already running"
+			exit
+		fi
+
+        su $ENDECA_USER -c "/usr/local/endeca/PlatformServices/11.1.0/tools/server/bin/startup.sh >> /home/vagrant/scripts/startup_shutdown.log 2>&1"
+		touch /var/lock/subsys/endecaplatform
+        ;;
+    'stop')
+        su $ENDECA_USER -c "/usr/local/endeca/PlatformServices/11.1.0/tools/server/bin/shutdown.sh >> /home/vagrant/scripts/startup_shutdown.log 2>&1"
+        rm -f /var/lock/subsys/endecaplatform
+        ;;
+esac
