@@ -21,7 +21,9 @@ Throughout this document, the top-level directory that you checked out from git 
 
 ## Install Required Virtual Machine Software
 
-Install the latest versions of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html)
+Install the latest versions of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html).  Also get the [vagrant-vbguest plugin](https://github.com/dotless-de/vagrant-vbguest).  You install it by typing from the command line:
+
+`vagrant plugin install vagrant-vbguest`
 
 ## Download Required Database Software
 
