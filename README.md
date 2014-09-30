@@ -155,17 +155,18 @@ At this point, you can pick up the ATG CRS documentation from the [Configuring a
 
 ### Deploy the crs data
 
-Do this from within the BCC by following the [http://docs.oracle.com/cd/E52191_01/CRS.11-1/ATGCRSInstall/html/s0214configuringthedeploymenttopology01.html](docs)
+Do this from within the BCC by following the [docs](http://docs.oracle.com/cd/E52191_01/CRS.11-1/ATGCRSInstall/html/s0214configuringthedeploymenttopology01.html)
 
 ### Check the baseline index status
 
-Do this from within the Dynamo Admin by following the [http://docs.oracle.com/cd/E52191_01/CRS.11-1/ATGCRSInstall/html/s0215checkingthebaselineindexstatus01.html](docs)
+Do this from within the Dynamo Admin by following the [docs](http://docs.oracle.com/cd/E52191_01/CRS.11-1/ATGCRSInstall/html/s0215checkingthebaselineindexstatus01.html)
 
 ### Promote the endeca content
 
 Do this from the command line from within the atg vm:
 
 `$ vagrant ssh atg`
+
 `[vagrant@localhost]$ /usr/local/endeca/Apps/CRS/control/promote_content.sh`
 
 ## Gotchas
