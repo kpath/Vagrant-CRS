@@ -23,7 +23,7 @@ Throughout this document, the top-level directory that you checked out from git 
 
 Install the latest versions of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html)
 
-## Download Required Database Software (optional)
+## Download Required Database Software
 
 The first step is to download the required installers.  In order to download Oracle database software you need an Oracle Support account.
 
@@ -45,7 +45,7 @@ Even though it says it's a patchset, it's actually a full product installer.
 
 You will also need a way to connect to the database.  I recommend [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html).
 
-## Build the database vm (optional)
+## Build the database vm
 
 In the root directory of this project (the one that contains the Vagrantfile), type:
 
