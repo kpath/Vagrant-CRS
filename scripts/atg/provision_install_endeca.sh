@@ -12,7 +12,9 @@ source /usr/local/endeca/PlatformServices/workspace/setup/installer_sh.ini
 export ENDECA_TOOLS_ROOT=/usr/local/endeca/ToolsAndFrameworks/11.1.0
 export ENDECA_TOOLS_CONF=/usr/local/endeca/ToolsAndFrameworks/11.1.0/server/workspace
 
-unzip -n /vagrant/software/V46389-01.zip -d /vagrant/software
+if [ -f /vagrant/software/V46389-01.zip ]; then
+	unzip -n /vagrant/software/V46389-01.zip -d /vagrant/software
+fi
 
 /vagrant/software/cd/Disk1/install/silent_install.sh /vagrant/scripts/atg/endeca_toolsandframeworks_silent_response.rsp \
 	ToolsAndFrameworks /usr/local/endeca/ToolsAndFrameworks admin

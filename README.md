@@ -93,7 +93,7 @@ Key Information:
   - Oracle Commerce Content Acquisition System 11.1 for Linux
   - Oracle Commerce Experience Manager Tools and Frameworks 11.1 for Linux
   - Oracle Commerce Guided Search Platform Services 11.1 for Linux
-- **Unzip everything except V46389-01.zip (Experience Manager Tools and Frameworks)**. This zipfile expands to a `cd` directory containing an installer.  The provisioning scripts will unzip this file for you.
+- **Unzip everything**  The Experience Manager Tools and Frameworks zipfile (V46389-01.zip) expands to a `cd` directory containing an installer.  It's not strictly required to unzip this file.  If you don't unzip V46389-01.zip the provisioner will do it for you.
 
 ### JDK 1.7
 
@@ -119,12 +119,13 @@ Before going any further, make sure your software directory looks like this:
 
 ```
 software/
+├── cd/
 ├── OCPlatform11.1.bin
 ├── OCReferenceStore11.1.bin
 ├── OCcas11.1.0-Linux64.sh
 ├── OCmdex6.5.1-Linux64_829811.sh
 ├── OCplatformservices11.1.0-Linux64.bin
-├── V46389-01.zip
+├── V46389-01.zip (optional)
 ├── jboss-eap-6.1.0.zip
 ├── jdk-7u67-linux-x64.rpm
 ├── ojdbc7.jar
