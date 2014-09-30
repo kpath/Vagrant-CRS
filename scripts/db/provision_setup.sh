@@ -4,6 +4,10 @@
 # verify centos release
 cat /etc/centos-release
 
+# make sure yum always works
+echo "http_caching=none" >> /etc/yum.conf
+yum clean metadata
+
 # convert into Oracle Linux 6
 curl -O https://linux.oracle.com/switch/centos2ol.sh
 sh centos2ol.sh; echo success
