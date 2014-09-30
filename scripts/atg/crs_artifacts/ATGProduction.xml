@@ -97,6 +97,9 @@
                     <driver module="com.h2database.h2" name="h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
+                    <driver module="com.oracle.ojdbc7" name="oracle.jdbc">
+                        <xa-datasource-class>oracle.jdbc.xa.client.OracleXADataSource</xa-datasource-class>
+                    </driver>
                 </drivers><xa-datasource enabled="true" jndi-name="java:/ATGProductionDS" pool-name="ATGProductionDS" use-java-context="true">
 		<xa-datasource-property name="URL">jdbc:oracle:thin:@192.168.70.4:1521:orcl</xa-datasource-property>
         <xa-datasource-property name="User">crs_core</xa-datasource-property>
@@ -105,7 +108,7 @@
         <!-- Uncomment the following if you are using Oracle 9i
           <xa-datasource-property name="oracle.jdbc.V8Compatible">true</xa-datasource-property>
         -->
-		<driver>ojdbc7.jar</driver>
+		<driver>oracle.jdbc</driver>
 		<security>
 			<user-name>crs_core</user-name>
 			<password>crs_core</password>
@@ -134,7 +137,7 @@
         <!-- Uncomment the following if you are using Oracle 9i
           <xa-datasource-property name="oracle.jdbc.V8Compatible">true</xa-datasource-property>
         -->
-		<driver>ojdbc7.jar</driver>
+		<driver>oracle.jdbc</driver>
 		<security>
 			<user-name>crs_catb</user-name>
 			<password>crs_catb</password>
@@ -163,7 +166,7 @@
         <!-- Uncomment the following if you are using Oracle 9i
           <xa-datasource-property name="oracle.jdbc.V8Compatible">true</xa-datasource-property>
         -->
-		<driver>ojdbc7.jar</driver>
+		<driver>oracle.jdbc</driver>
 		<security>
 			<user-name>crs_cata</user-name>
 			<password>crs_cata</password>
