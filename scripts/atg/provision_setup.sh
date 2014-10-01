@@ -7,9 +7,11 @@ cat /etc/centos-release
 echo "http_caching=none" >> /etc/yum.conf
 yum clean metadata
 
-# convert into Oracle Linux 6
-curl -O https://linux.oracle.com/switch/centos2ol.sh
-sh centos2ol.sh; echo success
+if [ ! -f /etc/oracle-release ]; then
+	# convert into Oracle Linux 6
+	curl -O https://linux.oracle.com/switch/centos2ol.sh
+	sh centos2ol.sh; echo success
+fi
 
 # verify oracle release
 cat /etc/oracle-release

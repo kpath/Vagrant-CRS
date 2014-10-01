@@ -21,6 +21,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # static IP so we can configure machines to talk to each other
     db_config.vm.network "private_network", ip: DB_PRIVATE_IP
 
+    # check for required software
+    atg_config.vm.provision "shell", path: "scripts/provision_check_software.sh", privileged: false
+
     # provisioning script converts to oracle linux and installs db prereqs
     db_config.vm.provision "shell", path: "scripts/db/provision_setup.sh"
 
@@ -54,7 +57,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     atg_config.vm.network "private_network", ip: ATG_PRIVATE_IP
 
     # check for required software
-    atg_config.vm.provision "shell", path: "scripts/atg/provision_check_sofware.sh", privileged: false
+    atg_config.vm.provision "shell", path: "scripts/provision_check_software.sh", privileged: false
 
     # provisioning script converts to oracle linux 
     atg_config.vm.provision "shell", path: "scripts/atg/provision_setup.sh"
