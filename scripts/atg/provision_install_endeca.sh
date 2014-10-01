@@ -5,7 +5,7 @@
 source /usr/local/endeca/MDEX/6.5.1/mdex_setup_sh.ini
 
 # platform services
-/vagrant/software/OCplatformservices11.1.0-Linux64.bin --silent --target /usr/local/ < /vagrant/scripts/atg/endeca_platformservices_silent.txt 
+/vagrant/software/OCplatformservices11.1.0-Linux64.bin --silent --target /usr/local/ < /vagrant/scripts/atg/endeca_platformservices_silent.silentinput 
 source /usr/local/endeca/PlatformServices/workspace/setup/installer_sh.ini
 
 # tools and frameworks
@@ -22,7 +22,7 @@ fi
 sudo /home/vagrant/oraInventory/orainstRoot.sh
 
 # CAS
-/vagrant/software/OCcas11.1.0-Linux64.sh --silent --target /usr/local < /vagrant/scripts/atg/endeca_cas_silent.txt
+/vagrant/software/OCcas11.1.0-Linux64.sh --silent --target /usr/local < /vagrant/scripts/atg/endeca_cas_silent.silentinput
 
 # setup bash profile now that the required files are installed
 

@@ -20,5 +20,5 @@ unzip -n /vagrant/scripts/atg/crs_artifacts/versionFileStore.zip -d /home/vagran
 
 # initialize the CRS Eac artifacts
 cp -r /home/vagrant/ATG/ATG11.1/CommerceReferenceStore/Store/Storefront/deploy /home/vagrant/deploy
-/usr/local/endeca/ToolsAndFrameworks/11.1.0/deployment_template/bin/deploy.sh --app /home/vagrant/deploy/deploy.xml < /vagrant/scripts/atg/deploy_CRS_endeca_silent.txt
+/usr/local/endeca/ToolsAndFrameworks/11.1.0/deployment_template/bin/deploy.sh --app /home/vagrant/deploy/deploy.xml < /vagrant/scripts/atg/deploy_CRS_endeca_silent.silentinput
 /usr/local/endeca/Apps/CRS/control/initialize_services.sh
