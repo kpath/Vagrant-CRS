@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     db_config.vm.network "private_network", ip: DB_PRIVATE_IP
 
     # check for required software
-    atg_config.vm.provision "shell", path: "scripts/provision_check_software.sh", privileged: false
+    db_config.vm.provision "shell", path: "scripts/provision_check_software.sh", privileged: false
 
     # provisioning script converts to oracle linux and installs db prereqs
     db_config.vm.provision "shell", path: "scripts/db/provision_setup.sh"
