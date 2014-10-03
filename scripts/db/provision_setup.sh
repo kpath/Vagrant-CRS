@@ -4,6 +4,9 @@
 # verify centos release
 cat /etc/centos-release
 
+# fastestmirror causes problems
+yum erase yum-fastestmirror
+
 # make sure yum always works
 echo "http_caching=none" >> /etc/yum.conf
 yum clean metadata
