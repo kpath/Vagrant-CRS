@@ -4,12 +4,8 @@
 # verify centos release
 cat /etc/centos-release
 
-# fastestmirror causes problems
-yum erase yum-fastestmirror
-
-# make sure yum always works
-echo "http_caching=none" >> /etc/yum.conf
-yum clean metadata
+# fastestmirror plugin causes problems. just disable plugins
+sed -i.bak 's/plugins=1/plugins=0/g' /etc/yum.conf
 
 if [ ! -f /etc/oracle-release ]; then
 	# convert into Oracle Linux 6
