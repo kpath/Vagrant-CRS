@@ -54,5 +54,10 @@ if [ ! -f /vagrant/software/V46389-01.zip ] && [ ! -f /vagrant/software/cd/Disk1
 	echo "ERROR! Missing Oracle Commerce Experience Manager Tools and Frameworks 11.1 for Linux - /vagrant/software/V46389-01.zip must be either present or expanded in the software directory"
 	exit 1
 fi
-
 echo "All required third-party software found."
+
+echo "Making sure all third-party installers are executable."
+chmod -R 755 /vagrant/software/*
+echo "All third-party software permissions set to 755."
+
+
