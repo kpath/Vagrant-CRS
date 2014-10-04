@@ -57,7 +57,7 @@ fi
 echo "All required third-party software found."
 
 echo "Making sure all third-party installers are executable."
-chmod -R 755 /vagrant/software/*
+chmod -R 755 /vagrant/software
 echo "All third-party software permissions set to 755."
 
 
