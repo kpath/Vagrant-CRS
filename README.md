@@ -2,12 +2,12 @@
 
 ### Product versions used in this guide:
 
-- Oracle Linux Server release 6.5 (Operating System) [licenses](https://oss.oracle.com/linux/legal/pkg-list.html)
-- Oracle Database 11.2.0.4.0 Enterprise Edition [license](http://docs.oracle.com/cd/E11882_01/license.112/e47877/toc.htm)
-- Oracle ATG Web Commerce 11.1 [license](http://docs.oracle.com/cd/E52191_02/Platform.11-1/ATGLicenseGuide/html/index.html)
-- JDK 1.7 [Oracle BCL license](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)
-- ojdbc7.jar driver [OTN license](http://www.oracle.com/technetwork/licenses/distribution-license-152002.html)
-- Jboss EAP 6.1 [LGPL license](http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License)
+- Oracle Linux Server release 6.5 (Operating System) - [licenses](https://oss.oracle.com/linux/legal/pkg-list.html)
+- Oracle Database 11.2.0.4.0 Enterprise Edition - [license](http://docs.oracle.com/cd/E11882_01/license.112/e47877/toc.htm)
+- Oracle ATG Web Commerce 11.1 - [license](http://docs.oracle.com/cd/E52191_02/Platform.11-1/ATGLicenseGuide/html/index.html)
+- JDK 1.7 - [Oracle BCL license](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)
+- ojdbc7.jar - driver [OTN license](http://www.oracle.com/technetwork/licenses/distribution-license-152002.html)
+- Jboss EAP 6.1 - [LGPL license](http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License)
 
 ### Other software dependencies
 
