@@ -16,9 +16,15 @@
 - vagrant-vbguest plugin - [MIT license](https://github.com/dotless-de/vagrant-vbguest/blob/master/LICENSE)
 - Oracle SQL Developer - [license](http://www.oracle.com/technetwork/licenses/sqldev-license-152021.html)
 
+### Technical Requirements
+
+This product stack is pretty heavy.  It's a DB, three endeca services and two ATG servers.  You're going to need:
+
+- 16 gigs RAM
+
 ### About
 
-This document describes a quick and easy way to install and play with ATG CRS.  By following this guide, you'll be able to focus on learning about ATG CRS, without debugging common gotchas. You need to run these vms on a pretty robust machine - the ATG vm requires 6 gigs of ram to run, and the DB needs 2 gigs.
+This document describes a quick and easy way to install and play with ATG CRS.  By following this guide, you'll be able to focus on learning about ATG CRS, without debugging common gotchas.
 
 ### Conventions
 
