@@ -2,7 +2,7 @@
 
 ### Product versions used in this guide:
 
-- Oracle Linux Server release 6.5 (Operating System) - [licenses](https://oss.oracle.com/linux/legal/pkg-list.html)
+- Oracle Linux Server release 6.5 (Operating System) - [All Licenses](https://oss.oracle.com/linux/legal/pkg-list.html)
 - Oracle Database 11.2.0.4.0 Enterprise Edition - [license](http://docs.oracle.com/cd/E11882_01/license.112/e47877/toc.htm)
 - Oracle ATG Web Commerce 11.1 - [license](http://docs.oracle.com/cd/E52191_02/Platform.11-1/ATGLicenseGuide/html/index.html)
 - JDK 1.7 - [Oracle BCL license](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)
@@ -12,7 +12,7 @@
 ### Other software dependencies
 
 - Vagrant - [MIT license](https://github.com/mitchellh/vagrant/blob/master/LICENSE)
-- VirtualBox - [GPL license](https://www.virtualbox.org/wiki/Licensing_FAQ)
+- VirtualBox - [License FAQ](https://www.virtualbox.org/wiki/Licensing_FAQ) - [GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 - vagrant-vbguest plugin - [MIT license](https://github.com/dotless-de/vagrant-vbguest/blob/master/LICENSE)
 - Oracle SQL Developer - [license](http://www.oracle.com/technetwork/licenses/sqldev-license-152021.html)
 
