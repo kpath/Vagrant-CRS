@@ -82,7 +82,8 @@ You will also need a way to connect to the database.  I recommend [Oracle SQL De
   - Oracle Commerce Content Acquisition System 11.1 for Linux
   - Oracle Commerce Experience Manager Tools and Frameworks 11.1 for Linux
   - Oracle Commerce Guided Search Platform Services 11.1 for Linux
-- **Unzip everything**  The Experience Manager Tools and Frameworks zipfile (V46389-01.zip) expands to a `cd`directory containing an installer.  It's not strictly required to unzip this file.  If you don't unzip V46389-01.zip the provisioner will do it for you.
+
+**NOTE**  The Experience Manager Tools and Frameworks zipfile (V46389-01.zip) expands to a `cd`directory containing an installer.  It's not strictly required to unzip this file.  If you don't unzip V46389-01.zip the provisioner will do it for you.
 
 ### JDK 1.7
 
@@ -163,7 +164,7 @@ For 12c type
 
 `vagrant up db12c`
 
-This will set in motion an amazing series of events, and can take a long time, depending on your RAM, processor speed, and internet connection speed.  The scripts will:
+This will set in motion an amazing series of events, *and can take a long time*, depending on your RAM, processor speed, and internet connection speed.  The scripts will:
 
 - download an empty centos machine
 - switch it to Oracle Linux (an officially supported platform for Oracle 11g and ATG 11.1)
