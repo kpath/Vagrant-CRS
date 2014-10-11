@@ -9,64 +9,63 @@ ATG_PRIVATE_IP = "192.168.70.5"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.define :db do |db_config|
-    db_config.vm.box = "chef/centos-6.5"
-    db_config.vbguest.auto_update = true
+config.vm.define :db12c do |db12c_config|
+    db12c_config.vm.box = "chef/centos-6.5"
 
     # change memory size
-    db_config.vm.provider "virtualbox" do |v|
+    db12c_config.vm.provider "virtualbox" do |v|
       v.memory = 2048
     end
 
     # static IP so we can configure machines to talk to each other
-    db_config.vm.network "private_network", ip: DB_PRIVATE_IP
+    db12c_config.vm.network "private_network", ip: DB_PRIVATE_IP
 
-    # check for required software
-    db_config.vm.provision "shell", path: "scripts/provision_check_software.sh", privileged: false
+    # provision
+    db12c_config.vm.provision "shell" do |s|
+        s.path = "scripts/db12c/provision.sh"
+        s.args = ENV['DB12C_PROVISION_ARGS']
+    end
+end
 
-    # provisioning script converts to oracle linux and installs db prereqs
-    db_config.vm.provision "shell", path: "scripts/db/provision_setup.sh"
+  # ============================
 
-    # installs oracle 11.2.0.4.0
-    db_config.vm.provision "shell", path: "scripts/db/provision_install.sh"
+  config.vm.define :db11g do |db11g_config|
+    db11g_config.vm.box = "chef/centos-6.5"
 
-    # runs oracle postinstallation tasks as root
-    db_config.vm.provision "shell", path: "scripts/db/provision_postinstall.sh"    
+    # change memory size
+    db11g_config.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+    end
 
-    # installs tns listener and creates empty db
-    db_config.vm.provision "shell", path: "scripts/db/provision_netca_dbca.sh"        
+    # static IP so we can configure machines to talk to each other
+    db11g_config.vm.network "private_network", ip: DB_PRIVATE_IP
 
-    # imports the ATG CRS db dump
-    db_config.vm.provision "shell", path: "scripts/db/provision_import.sh" 
-
-    # sets up the init.d service
-    db_config.vm.provision "shell", path: "scripts/db/provision_service_setup.sh"  
-  end
+    # provision
+    db11g_config.vm.provision "shell" do |s|
+        s.path = "scripts/db11g/provision.sh"
+        s.args = ENV['DB11G_PROVISION_ARGS']
+    end
+end
 
   # ==============================
 
   config.vm.define :atg do |atg_config|
+
     atg_config.vm.box = "chef/centos-6.5"
-    atg_config.vbguest.auto_update = true
 
     # change memory size
     atg_config.vm.provider "virtualbox" do |v|
       v.memory = 6144
     end
 
+    # static IP so we can configure machines to talk to each other
     atg_config.vm.network "private_network", ip: ATG_PRIVATE_IP
 
-    # check for required software
-    atg_config.vm.provision "shell", path: "scripts/provision_check_software.sh", privileged: false
-
-    # provisioning script converts to oracle linux 
-    atg_config.vm.provision "shell", path: "scripts/atg/provision_setup.sh"
-
-    # install software
-    atg_config.vm.provision "shell", path: "scripts/atg/provision_install_endeca.sh", privileged: false
-    atg_config.vm.provision "shell", path: "scripts/atg/provision_service_setup.sh"
-    atg_config.vm.provision "shell", path: "scripts/atg/provision_install_atg.sh", privileged: false
-    atg_config.vm.provision "shell", path: "scripts/atg/provision_install_crs_artifacts.sh", privileged: false
+    # provision
+    atg_config.vm.provision "shell" do |s|
+        s.path = "scripts/atg/provision.sh"
+        s.args = ENV['ATG_PROVISION_ARGS']
+    end
 
   end
 

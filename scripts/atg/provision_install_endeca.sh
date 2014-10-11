@@ -1,30 +1,35 @@
 # endeca
 
-# MDEX
-/vagrant/software/OCmdex6.5.1-Linux64_829811.sh --silent --target /usr/local
-source /usr/local/endeca/MDEX/6.5.1/mdex_setup_sh.ini
+# do this as vagrant
+exec sudo -u vagrant /bin/bash -l << eof
 
-# platform services
-/vagrant/software/OCplatformservices11.1.0-Linux64.bin --silent --target /usr/local/ < /vagrant/scripts/atg/endeca_platformservices_silent.silentinput 
-source /usr/local/endeca/PlatformServices/workspace/setup/installer_sh.ini
+	# MDEX
+	/vagrant/software/OCmdex6.5.1-Linux64_829811.sh --silent --target /usr/local
+	source /usr/local/endeca/MDEX/6.5.1/mdex_setup_sh.ini
 
-# tools and frameworks
-export ENDECA_TOOLS_ROOT=/usr/local/endeca/ToolsAndFrameworks/11.1.0
-export ENDECA_TOOLS_CONF=/usr/local/endeca/ToolsAndFrameworks/11.1.0/server/workspace
+	# platform services
+	/vagrant/software/OCplatformservices11.1.0-Linux64.bin --silent --target /usr/local/ < /vagrant/scripts/atg/endeca_platformservices_silent.silentinput 
+	source /usr/local/endeca/PlatformServices/workspace/setup/installer_sh.ini
 
-if [ -f /vagrant/software/V46389-01.zip ]; then
-	unzip -n /vagrant/software/V46389-01.zip -d /vagrant/software
-fi
+	# tools and frameworks
+	export ENDECA_TOOLS_ROOT=/usr/local/endeca/ToolsAndFrameworks/11.1.0
+	export ENDECA_TOOLS_CONF=/usr/local/endeca/ToolsAndFrameworks/11.1.0/server/workspace
 
-/vagrant/software/cd/Disk1/install/silent_install.sh /vagrant/scripts/atg/endeca_toolsandframeworks_silent_response.rsp \
-	ToolsAndFrameworks /usr/local/endeca/ToolsAndFrameworks admin
+	if [ -f /vagrant/software/V46389-01.zip ]; then
+		unzip -n /vagrant/software/V46389-01.zip -d /vagrant/software
+	fi
 
-sudo /home/vagrant/oraInventory/orainstRoot.sh
+	/vagrant/software/cd/Disk1/install/silent_install.sh /vagrant/scripts/atg/endeca_toolsandframeworks_silent_response.rsp \
+		ToolsAndFrameworks /usr/local/endeca/ToolsAndFrameworks admin
 
-# CAS
-/vagrant/software/OCcas11.1.0-Linux64.sh --silent --target /usr/local < /vagrant/scripts/atg/endeca_cas_silent.silentinput
+	sudo /home/vagrant/oraInventory/orainstRoot.sh
 
-# setup bash profile now that the required files are installed
+	# CAS
+	/vagrant/software/OCcas11.1.0-Linux64.sh --silent --target /usr/local < /vagrant/scripts/atg/endeca_cas_silent.silentinput
 
-echo "source /usr/local/endeca/MDEX/6.5.1/mdex_setup_sh.ini" >> /home/vagrant/.bash_profile \
- && echo "source /usr/local/endeca/PlatformServices/workspace/setup/installer_sh.ini" >> /home/vagrant/.bash_profile
+	# setup bash profile now that the required files are installed
+
+	echo "source /usr/local/endeca/MDEX/6.5.1/mdex_setup_sh.ini" >> /home/vagrant/.bash_profile \
+	 && echo "source /usr/local/endeca/PlatformServices/workspace/setup/installer_sh.ini" >> /home/vagrant/.bash_profile
+
+eof
