@@ -83,7 +83,7 @@ You will also need a way to connect to the database.  I recommend [Oracle SQL De
   - Oracle Commerce Experience Manager Tools and Frameworks 11.1 for Linux
   - Oracle Commerce Guided Search Platform Services 11.1 for Linux
 
-**NOTE**  The Experience Manager Tools and Frameworks zipfile (V46389-01.zip) expands to a `cd`directory containing an installer.  It's not strictly required to unzip this file.  If you don't unzip V46389-01.zip the provisioner will do it for you.
+**NOTE**  The Experience Manager Tools and Frameworks zipfile (V46389-01.zip) expands to a `cd` directory containing an installer.  It's not strictly required to unzip this file.  If you don't unzip V46389-01.zip the provisioner will do it for you.
 
 ### JDK 1.7
 
@@ -113,13 +113,12 @@ If you seclected Oracle 11g:
 
 ```
 software/
-├── cd/
 ├── OCPlatform11.1.bin
 ├── OCReferenceStore11.1.bin
 ├── OCcas11.1.0-Linux64.sh
 ├── OCmdex6.5.1-Linux64_829811.sh
 ├── OCplatformservices11.1.0-Linux64.bin
-├── V46389-01.zip (optional)
+├── V46389-01.zip
 ├── jboss-eap-6.1.0.zip
 ├── jdk-7u67-linux-x64.rpm
 ├── ojdbc7.jar
