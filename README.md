@@ -4,6 +4,8 @@
 
 This document describes a quick and easy way to install and play with ATG CRS.  By following this guide, you'll be able to focus on learning about ATG CRS, without debugging common gotchas.
 
+If you get lost, you can consult the [ATG CRS Installation and Configuration Guide](http://docs.oracle.com/cd/E52191_01/CRS.11-1/ATGCRSInstall/html) for help.
+
 ### Conventions
 
 Throughout this document, the top-level directory that you checked out from git will be referred to as `{ATG-CRS}`
