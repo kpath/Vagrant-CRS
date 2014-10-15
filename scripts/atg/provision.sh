@@ -15,7 +15,7 @@ do
     case "$p" in 
         check)
             # check for required software
-            /vagrant/scripts/atg/provision_check_software.sh
+            source /vagrant/scripts/atg/provision_check_software.sh
             ;;
         setup)
             # provisioning script converts to oracle linux and installs db prereqs
