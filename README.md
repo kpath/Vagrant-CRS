@@ -90,7 +90,7 @@ You will also need a way to connect to the database.  I recommend [Oracle SQL De
 ### JDK 1.7
 
 - Go to the [Oracle JDK 7 Downloads Page](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
-- Download "jdk-7u67-linux-x64.rpm"
+- Download "jdk-7u72-linux-x64.rpm"
 
 ### JBoss EAP 6.1
 
@@ -122,7 +122,7 @@ software/
 ├── OCplatformservices11.1.0-Linux64.bin
 ├── V46389-01.zip
 ├── jboss-eap-6.1.0.zip
-├── jdk-7u67-linux-x64.rpm
+├── jdk-7u72-linux-x64.rpm
 ├── ojdbc7.jar
 ├── p13390677_112040_Linux-x86-64_1of7.zip
 ├── p13390677_112040_Linux-x86-64_2of7.zip
@@ -140,7 +140,7 @@ software/
 ├── OCplatformservices11.1.0-Linux64.bin
 ├── V46389-01.zip
 ├── jboss-eap-6.1.0.zip
-├── jdk-7u67-linux-x64.rpm
+├── jdk-7u72-linux-x64.rpm
 ├── linuxamd64_12102_database_1of2.zip
 ├── linuxamd64_12102_database_2of2.zip
 ├── ojdbc7.jar
@@ -195,7 +195,7 @@ Key Information:
 
 `vagrant up atg`
 
-When it's done you'll have a vm created that is all ready to install and run ATG CRS.  It will have installed jdk7 at /usr/java/jdk1.7.0_67 and jboss at /home/vagrant/jboss/.  You'll also have the required environment variables set in the .bash_profile of the "vagrant" user.
+When it's done you'll have a vm created that is all ready to install and run ATG CRS.  It will have installed jdk7 at /usr/java/jdk1.7.0_72 and jboss at /home/vagrant/jboss/.  You'll also have the required environment variables set in the .bash_profile of the "vagrant" user.
 
 To get a shell on the atg vm, type
 
@@ -204,7 +204,7 @@ To get a shell on the atg vm, type
 Key Information:
 
 - The atg vm has the private IP 192.168.70.5.  This is defined at the top of the Vagrantfile.
-- java is installed in `/usr/java/jdk1.7.0_67`
+- java is installed in `/usr/java/jdk1.7.0_72`
 - jboss is installed at `/home/vagrant/jboss`
 - Your project directory is mounted at `/vagrant`.  You'll find the installers you downloaded at `/vagrant/software`from within the atg vm
 - All the endeca software is installed under `/usr/local/endeca`and your CRS endeca project is installed under `/usr/local/endeca/Apps`

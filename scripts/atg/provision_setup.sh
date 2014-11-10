@@ -24,29 +24,26 @@ fi
 # verify oracle release
 cat /etc/oracle-release
 
-# upgrade yum
-yum upgrade -y
-
 # install some tools and libraries that are required
 yum install -y unzip ant ant-nodeps ant-contrib libaio
 
 # set environment variables
 if  ! grep -qe "^export ENDECA_TOOLS_CONF=" "/home/vagrant/.bash_profile"; then
-	echo "export JAVA_HOME=/usr/java/jdk1.7.0_67" >> /home/vagrant/.bash_profile \
+	echo "export JAVA_HOME=/usr/java/jdk1.7.0_72" >> /home/vagrant/.bash_profile \
 	 && echo "export DYNAMO_HOME=/home/vagrant/ATG/ATG11.1/home" >> /home/vagrant/.bash_profile \
 	 && echo "export JBOSS_HOME=/home/vagrant/jboss" >> /home/vagrant/.bash_profile \
 	 && echo "export ATG_HOME=/home/vagrant/ATG/ATG11.1/home" >> /home/vagrant/.bash_profile \
 	 && echo "export ATG_DIR=/root/ATG/ATG11.1" >> /home/vagrant/.bash_profile \
-	 && echo "export JAVA_VM=/usr/java/jdk1.7.0_67/bin/java" >> /home/vagrant/.bash_profile \
+	 && echo "export JAVA_VM=/usr/java/jdk1.7.0_72/bin/java" >> /home/vagrant/.bash_profile \
 	 && echo "export JAVA_ARGS=-Duser.timezone=UTC" >> /home/vagrant/.bash_profile \
 	 && echo "export JAVA_OPTS=-Duser.timezone=UTC" >> /home/vagrant/.bash_profile \
 	 && echo "export ENDECA_TOOLS_ROOT=/usr/local/endeca/ToolsAndFrameworks/11.1.0" >> /home/vagrant/.bash_profile \
 	 && echo "export ENDECA_TOOLS_CONF=/usr/local/endeca/ToolsAndFrameworks/11.1.0/server/workspace" >> /home/vagrant/.bash_profile \
-	 && echo "export PATH=/usr/java/jdk1.7.0_67/bin:$PATH" >> /home/vagrant/.bash_profile
+	 && echo "export PATH=/usr/java/jdk1.7.0_72/bin:$PATH" >> /home/vagrant/.bash_profile
 fi
 
 # jdk
-rpm -Uvh /vagrant/software/jdk-7u67-linux-x64.rpm
+rpm -Uvh /vagrant/software/jdk-7u72-linux-x64.rpm
 
 # directories
 mkdir -p /usr/local/endeca/Apps

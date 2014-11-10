@@ -29,9 +29,6 @@ fi
 # verify oracle release
 cat /etc/oracle-release
 
-# upgrade yum
-yum upgrade -y
-
 # install tools
 yum install -y unzip
 

@@ -5,7 +5,7 @@ echo "Checking for the presence of required third-party software installers ..."
 
 declare -a files=(
 "jboss-eap-6.1.0.zip"
-"jdk-7u67-linux-x64.rpm"
+"jdk-7u72-linux-x64.rpm"
 "OCPlatform11.1.bin"
 "ojdbc7.jar"
 "OCcas11.1.0-Linux64.sh"
