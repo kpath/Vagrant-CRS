@@ -52,8 +52,8 @@ end
   # ==============================
 
   config.vm.define :atg do |atg_config|
-    db11g_config.vm.box = "opscode-centos-6.6"
-    db11g_config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.6_chef-provisionerless.box"
+    atg_config.vm.box = "opscode-centos-6.6"
+    atg_config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.6_chef-provisionerless.box"
 
     # change memory size
     atg_config.vm.provider "virtualbox" do |v|
