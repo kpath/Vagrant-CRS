@@ -10,7 +10,8 @@ ATG_PRIVATE_IP = "192.168.70.5"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 config.vm.define :db12c do |db12c_config|
-    db12c_config.vm.box = "chef/centos-6.5"
+    db12c_config.vm.box = "opscode-centos-6.6"
+    db12c_config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.6_chef-provisionerless.box"
 
     # change memory size
     db12c_config.vm.provider "virtualbox" do |v|
@@ -30,7 +31,8 @@ end
   # ============================
 
   config.vm.define :db11g do |db11g_config|
-    db11g_config.vm.box = "chef/centos-6.5"
+    db11g_config.vm.box = "opscode-centos-6.6"
+    db11g_config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.6_chef-provisionerless.box"
 
     # change memory size
     db11g_config.vm.provider "virtualbox" do |v|
@@ -50,8 +52,8 @@ end
   # ==============================
 
   config.vm.define :atg do |atg_config|
-
-    atg_config.vm.box = "chef/centos-6.5"
+    db11g_config.vm.box = "opscode-centos-6.6"
+    db11g_config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.6_chef-provisionerless.box"
 
     # change memory size
     atg_config.vm.provider "virtualbox" do |v|
