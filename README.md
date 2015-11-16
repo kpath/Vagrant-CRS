@@ -70,20 +70,26 @@ You will also need a way to connect to the database.  I recommend [Oracle SQL De
 
 ### ATG 11.1
 
+These instructions download a previous release of Oracle ATG (11.1). At the time of this writing the latest release is 11.2.  The scripts are coded to assume that the Oracle ATG assets have 11.1 in the name, so you can't just download 11.2 and have it work here.  Sorry.
+
 - Go to [Oracle Edelivery](http://edelivery.oracle.com)
+- Sign in
 - Accept the restrictions
-- On the search page Select the following options: 
-  - Product Pack -> ATG Web Commerce
-  - Platform -> Linux x86-64
-- Click Go
-- Click the top search result "Oracle Commerce (11.1.0), Linux"
-- Download the following parts:
-  - Oracle Commerce Platform 11.1 for UNIX
-  - Oracle Commerce Reference Store 11.1 for UNIX
-  - Oracle Commerce MDEX Engine 6.5.1 for Linux
-  - Oracle Commerce Content Acquisition System 11.1 for Linux
-  - Oracle Commerce Experience Manager Tools and Frameworks 11.1 for Linux
-  - Oracle Commerce Guided Search Platform Services 11.1 for Linux
+- On the search page, search for and select the following components:
+  - Oracle ATG Web Commerce
+  - Oracle Endeca Developer
+- Select the platform "Linux x86-64"
+- Click Continue
+- Click "select alternate release" and select 11.1.0.0.0
+- Click Continue
+- Accept the terms and conditions
+- You don't need to download everything.  Download the following files:
+  - "Oracle Commerce Platform"
+  - "Oracle Commerce Reference Store"
+  - "Oracle Commerce MDEX Engine"
+  - "Oracle Commerce Content Acquisition System"
+  - "Oracle Commerce Experience Manager Tools and Frameworks"
+  - "Oracle Commerce Guided Search Platform Services"
 
 **NOTE**  The Experience Manager Tools and Frameworks zipfile (V46389-01.zip) expands to a `cd` directory containing an installer.  It's not strictly required to unzip this file.  If you don't unzip V46389-01.zip the provisioner will do it for you.
 
