@@ -155,7 +155,7 @@ software/
 
 ## Install Required Virtual Machine Software
 
-Install the latest version of [Vagrant](http://www.vagrantup.com/downloads.html). Install the *latest 4.x* release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads). I've had issues installing the database using Virtualbox 5.x.  Also get the [vagrant-vbguest plugin](https://github.com/dotless-de/vagrant-vbguest).  You install it by typing from the command line:
+Install the latest version of [Vagrant](http://www.vagrantup.com/downloads.html). Install the **latest 4.x** release of [VirtualBox](https://www.virtualbox.org/wiki/Downloads). I've had issues installing the database using Virtualbox 5.x.  Also get the [vagrant-vbguest plugin](https://github.com/dotless-de/vagrant-vbguest).  You install it by typing from the command line:
 
 `vagrant plugin install vagrant-vbguest`
 
