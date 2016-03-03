@@ -10,10 +10,20 @@ declare -a files=(
 
 for file in "${files[@]}"
 do
-	echo "Checking for the presence of $file in the software directory"
+	echo "Checking for the presence of $file in the software directory ..."
 	if [ ! -f /vagrant/software/$file ]; then
 		echo "ERROR! Missing third-party software: $file."
 		exit 1
+	else
+		echo "$file found"
+	fi
+
+	echo "Checking md5 sum of $file ..."
+	if [ ! `cat /vagrant/software/$file.md5` = `md5sum /vagrant/software/$file | cut -d ' ' -f 1` ]; then
+		echo "ERROR! md5sum for $file does not match.  File is corrupt."
+		exit 1
+	else
+		echo "checksum matches"
 	fi
 done
 
